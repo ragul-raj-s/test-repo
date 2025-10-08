@@ -1,6 +1,10 @@
 pipeline {
   agent any
 
+  tools {
+    nodejs "NodeJS24"
+  }
+
   environment {
     NODE_ENV = 'development'
   }
