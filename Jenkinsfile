@@ -2,7 +2,7 @@ node('agent-node-test') {
 
   env.NODE_ENV = 'development'
 
-  def nodeHome = tool name: 'NodeJS24', type: 'hudson.plugins.nodejs.tools.NodeJSInstallation'
+  def nodeHome = tool 'NodeJS24'
   env.PATH = "${nodeHome}/bin:${env.PATH}"
 
   try {
