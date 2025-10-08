@@ -1,56 +1,39 @@
-pipeline {
-  agent { label 'agent-node-test' }
+node('agent-node-test') {
 
-  tools {
-    nodejs "NodeJS24"
-  }
+  env.NODE_ENV = 'development'
 
-  environment {
-    NODE_ENV = 'development'
-  }
+  def nodeHome = tool name: 'NodeJS24', type: 'hudson.plugins.nodejs.tools.NodeJSInstallation'
+  env.PATH = "${nodeHome}/bin:${env.PATH}"
 
-  stages {
+  try {
     stage('Checkout') {
-      steps {
-        echo '🔄 Cloning the repo...'
-        checkout scm
-      }
+      echo '🔄 Cloning the repo...'
+      checkout scm
     }
 
     stage('Install Dependencies') {
-      steps {
-        echo '📦 Installing dependencies...'
-        sh 'npm install'
-      }
+      echo '📦 Installing dependencies...'
+      sh 'npm install'
     }
 
     stage('Run Tests') {
-      steps {
-        echo '🧪 Running tests...'
-        sh 'npm test'
-      }
+      echo '🧪 Running tests...'
+      sh 'npm test'
     }
 
     stage('Build App') {
-      steps {
-        echo '🏗️ Building the app...'
-        sh 'npm run build'
-      }
+      echo '🏗️ Building the app...'
+      sh 'npm run build'
     }
 
     stage('Done') {
-      steps {
-        echo '✅ Build finished successfully!'
-      }
+      echo '✅ Build finished successfully!'
     }
-  }
 
-  post {
-    success {
-      echo '🎉 SUCCESS: Pipeline completed!'
-    }
-    failure {
-      echo '❌ ERROR: Pipeline failed!'
-    }
+    echo '🎉 SUCCESS: Pipeline completed!'
+  } catch (err) {
+    echo "❌ ERROR: Pipeline failed! Reason: ${err}"
+    currentBuild.result = 'FAILURE'
+    throw err
   }
 }
