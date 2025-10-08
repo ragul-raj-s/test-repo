@@ -1,0 +1,26 @@
+{
+  "name": "test-repo",
+  "version": "1.0.0",
+  "description": "Repository created for testing jenkins pipelines",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ragul-raj-s/test-repo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ragul-raj-s/test-repo/issues"
+  },
+  "homepage": "https://github.com/ragul-raj-s/test-repo#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0"
+  }
+}
