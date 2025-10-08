@@ -1,5 +1,5 @@
 pipeline {
-  agent any
+  agent { label 'agent-node-test' }
 
   tools {
     nodejs "NodeJS24"
