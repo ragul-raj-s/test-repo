@@ -7,25 +7,49 @@ dotenv.config();
 // Jenkins config
 const jenkins = new Jenkins({
     baseUrl: process.env.JENKINS_BASE_URL || `http://${process.env.JENKINS_USER}:${process.env.JENKINS_API_TOKEN}@localhost:8080`,
-    crumbIssuer: true, 
-    promisify: true    
+    crumbIssuer: true,
+    promisify: true
 });
 
 const PIPELINE_NAME = 'test_job_01';
 
 // Route to trigger Jenkins pipeline
 router.post('/run-pipeline', async (req, res) => {
-  try {
+    try {
         await jenkins.job.build(PIPELINE_NAME);
         console.log(`Triggered pipeline ${PIPELINE_NAME}`);
         res.status(200).json({
             success: true,
             message: `Build for job ${PIPELINE_NAME} successfully queued.`,
         });
-  } catch (err) {
-    console.error('Unexpected error:', err);
-    res.status(500).json({ error: 'Unexpected error triggering pipeline' });
-  }
+    } catch (err) {
+        console.error('Unexpected error:', err);
+        res.status(500).json({ error: 'Unexpected error triggering pipeline' });
+    }
+});
+
+router.get('/pipelines', async (req, res) => {
+    try {
+        const jobs = await jenkins.job.list();
+        jobs.forEach(job => {
+            console.log(`- ${job.name} (${job.url})`);
+        });
+        res.status(200).json(jobs);
+    } catch (err) {
+        console.error('Error fetching jobs:', err);
+        res.status(500).json({ error: 'Error fetching jobs' });
+    }
+});
+
+router.get('/pipeline/:id', async (req, res) => {
+    try {
+        const jobName = req.params.id;
+        const jobInfo = await jenkins.job.get(jobName);
+        res.status(200).json(jobInfo);
+    } catch (err) {
+        console.error('Error fetching job info:', err);
+        res.status(500).json({ error: 'Error fetching job info' });
+    }
 });
 
 module.exports = router;
