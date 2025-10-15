@@ -7,32 +7,32 @@ node('agent-node-test') {
 
   try {
     stage('Checkout') {
-      echo '🔄 Cloning the repo...'
+      echo 'Cloning the repo...'
       checkout scm
     }
 
     stage('Install Dependencies') {
-      echo '📦 Installing dependencies...'
+      echo 'Installing dependencies...'
       sh 'npm install'
     }
 
     stage('Run Tests') {
-      echo '🧪 Running tests...'
+      echo 'Running tests...'
       sh 'npm test'
     }
 
     stage('Build App') {
-      echo '🏗️ Building the app...'
+      echo 'Building the app...'
       sh 'npm run build'
     }
 
     stage('Done') {
-      echo '✅ Build finished successfully!'
+      echo 'Build finished successfully!'
     }
 
-    echo '🎉 SUCCESS: Pipeline completed!'
+    echo 'SUCCESS: Pipeline completed!'
   } catch (err) {
-    echo "❌ ERROR: Pipeline failed! Reason: ${err}"
+    echo "ERROR: Pipeline failed! Reason: ${err}"
     currentBuild.result = 'FAILURE'
     throw err
   }
