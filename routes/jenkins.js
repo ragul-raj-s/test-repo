@@ -11,7 +11,7 @@ const jenkins = new Jenkins({
     promisify: true
 });
 
-const PIPELINE_NAME = 'test_job_01';
+const PIPELINE_NAME = 'test_job_02';
 
 // Route to trigger Jenkins pipeline
 router.post('/run-pipeline', async (req, res) => {
