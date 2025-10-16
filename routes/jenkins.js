@@ -11,11 +11,24 @@ const jenkins = new Jenkins({
     promisify: true
 });
 
-const PIPELINE_NAME = 'test_job_02';
+const PIPELINE_MAP = {
+    "dev": "test_job_01",
+    "main": "test_job_02",
+};
 
 // Route to trigger Jenkins pipeline
 router.post('/run-pipeline', async (req, res) => {
     try {
+        const event = req.headers["x-github-event"];
+        if (event !== "push") {
+            return res.status(200).json({ message: "Ignored non-push event" });
+        }
+        const branch = req.body.ref.split('/').pop();
+        const PIPELINE_NAME = PIPELINE_MAP[branch];
+        if (!PIPELINE_NAME) {
+            return res.status(200).json({ error: 'No pipeline configured for this branch' });
+        }
+
         await jenkins.job.build(PIPELINE_NAME);
         console.log(`Triggered pipeline ${PIPELINE_NAME}`);
         res.status(200).json({
