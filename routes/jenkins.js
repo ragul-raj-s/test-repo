@@ -16,7 +16,7 @@ const PIPELINE_MAP = {
     "main": "test_job_02",
 };
 
-// Route to trigger Jenkins pipeline
+// Route to trigger Jenkins pipeline based on branch
 router.post('/run-pipeline', async (req, res) => {
     try {
         const event = req.headers["x-github-event"];
