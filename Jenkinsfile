@@ -1,4 +1,4 @@
-@Library('speedrun-shared-library@feature/revamped-library-code') _
+@Library('speedrun-shared-library@feature/revamped-library-code-testing') _
 
 buildUnrealGameWithAWS([
     instanceType: 't3.micro',
