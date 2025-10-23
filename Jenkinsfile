@@ -1,39 +1,17 @@
-node('agent-node-test') {
+@Library('speedrun-shared-library@feature/revamped-library-code') _
 
-  env.NODE_ENV = 'development'
-
-  def nodeHome = tool 'NodeJS24'
-  env.PATH = "${nodeHome}/bin:${env.PATH}"
-
-  try {
-    stage('Checkout') {
-      echo 'Cloning the repo...'
-      checkout scm
-    }
-
-    stage('Install Dependencies') {
-      echo 'Installing dependencies...'
-      sh 'npm install'
-    }
-
-    stage('Run Tests') {
-      echo 'Running tests...'
-      sh 'npm test'
-    }
-
-    stage('Build App') {
-      echo 'Building the app...'
-      sh 'npm run build'
-    }
-
-    stage('Done') {
-      echo 'Build finished successfully!'
-    }
-
-    echo 'SUCCESS: Pipeline completed!'
-  } catch (err) {
-    echo "ERROR: Pipeline failed! Reason: ${err}"
-    currentBuild.result = 'FAILURE'
-    throw err
-  }
-}
+buildUnrealGameWithAWS([
+    instanceType: 't3.micro',
+    amiId: 'ami-0cfb5dc6083f5748e',
+    awsRegion: 'us-east-1',
+    snapshotTags: [
+        'Environment': 'Production',
+        'Game': 'MyGame',
+        'Type': 'UnrealEngine'
+    ],
+    platform: 'Win64',
+    configuration: 'Development',
+    s3Bucket: 'my-unreal-builds',
+    backendApiUrl: 'http://localhost:3000',
+    backendApiKey: credentials('backend-api-key')
+])
