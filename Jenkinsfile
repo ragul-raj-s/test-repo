@@ -33,7 +33,8 @@ pipeline {
                     backendApiKey: credentials('backend-api-key'),
                     jenkinsUrl: 'https://unexposable-marquerite-carpologically.ngrok-free.dev',
                     jenkinsUser: 'ragul',
-                    jenkinsApiToken: credentials('jenkins-api-token')
+                    jenkinsApiToken: credentials('jenkins-api-token'),
+                    s3Bucket: 'speedrun-ci-tf-state',
                 ])
                 }
             }
