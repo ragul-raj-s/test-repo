@@ -23,7 +23,7 @@ pipeline {
                     iamInstanceProfile: 'arn:aws:iam::511345548959:instance-profile/Speedrun-test-ec2-role',
                     snapshotTags: [
                         'Environment': 'Production',
-                        'Game': 'MyGame',
+                        'Game': 'Unsung empires',
                         'Type': 'UnrealEngine'
                     ],
                     platform: 'Win64',
