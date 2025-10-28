@@ -23,8 +23,9 @@ pipeline {
                     iamInstanceProfile: 'arn:aws:iam::511345548959:instance-profile/Speedrun-test-ec2-role',
                     snapshotTags: [
                         'Environment': 'Production',
-                        'Game': 'Unsung empires',
-                        'Type': 'UnrealEngine'
+                        'Name': 'UnrealEngine5_6-Snapshot',
+                        'Engine_name': 'Unreal',
+                        'Project': 'SpeedRunCi'
                     ],
                     platform: 'Win64',
                     configuration: 'Development',
