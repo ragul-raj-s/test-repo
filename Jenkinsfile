@@ -36,6 +36,20 @@ pipeline {
                     jenkinsUser: 'ragul',
                     jenkinsApiToken: credentials('jenkins-api-token'),
                     s3Bucket: 'speedrun-ci-tf-state',
+                    scmType: 'git',
+                    gitUrl: 'https://github.com/ayeletstudioindia/ue5-test',
+                    gitBranch: 'main',
+                    gitCredentials: 'github-speedrun-ssh',
+                    gitSubmodules: true,
+                    gitLFS: true,
+                    gitShallowClone: true,
+                    gitCloneDepth: 1,
+                    cleanWorkspace: true,
+                    platform: 'Win64',
+                    configuration: 'Development',
+                    enginePath: 'D:/Engine/UnrealEngine_5_6/Windows/Engine/Build/BatchFiles/RunUAT.bat',
+                    projectPath: 'MyProject2/MyProject2.uproject',
+                    runTests: false,
                 ])
                 }
             }
