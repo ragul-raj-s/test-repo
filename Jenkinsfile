@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
                     buildUnrealGameWithAWS([
-                    instanceType: 't3.micro',
+                    instanceType: 't3.large',
                     amiId: 'ami-0cfb5dc6083f5748e',
                     awsRegion: 'us-east-1',
                     subnetId: 'subnet-e0b930ad',
