@@ -39,7 +39,7 @@ pipeline {
                     scmType: 'git',
                     gitUrl: 'git@github.com:ayeletstudioindia/ue5-test.git',
                     gitBranch: 'main',
-                    gitCredentials: 'github-speedrun-ssh',
+                    gitCredentials: 'github-ue5-ssh',
                     gitSubmodules: true,
                     gitLFS: true,
                     gitShallowClone: true,
