@@ -37,7 +37,7 @@ pipeline {
                     jenkinsApiToken: credentials('jenkins-api-token'),
                     s3Bucket: 'speedrun-ci-tf-state',
                     scmType: 'git',
-                    gitUrl: 'https://github.com/ayeletstudioindia/ue5-test',
+                    gitUrl: 'git@github.com:ayeletstudioindia/ue5-test.git',
                     gitBranch: 'main',
                     gitCredentials: 'github-speedrun-ssh',
                     gitSubmodules: true,
