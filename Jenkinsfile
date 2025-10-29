@@ -58,7 +58,8 @@ pipeline {
                     platform: 'Win64',
                     configuration: 'Development',
                     enginePath: 'D:/Engine/UnrealEngine_5_6/Windows/Engine/Build/BatchFiles/RunUAT.bat',
-                    projectPath: 'MyProject2/MyProject2.uproject',
+                    workspaceRoot: 'E:/TestRepo',
+                    projectPath: 'E:/TestRepo/ue5-test/MyProject2/MyProject2.uproject',
                     runTests: false,
                 ])
                 }
