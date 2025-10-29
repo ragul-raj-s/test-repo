@@ -40,7 +40,7 @@ pipeline {
                         ],
                     
                         // Jenkins Swarm Configuration (runs on C: drive - always available)
-                        jenkinsUrl: 'https://unexposable-marquerite-carpologically.ngrok-free.dev',
+                        jenkinsUrl: 'https://flavia-unforlorn-unrubrically.ngrok-free.dev',
                         jenkinsUser: 'ragul',
                         jenkinsApiToken: credentials('jenkins-api-token'),
                         checkoutDir: 'E:/TestRepo',
