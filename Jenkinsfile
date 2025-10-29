@@ -21,11 +21,21 @@ pipeline {
                     securityGroupIds: ['sg-a55cbf85'],
                     keyName: 'learning-key',
                     iamInstanceProfile: 'arn:aws:iam::511345548959:instance-profile/Speedrun-test-ec2-role',
-                    snapshotTags: [
-                        'Environment': 'Production',
-                        'Name': 'UnrealEngine5_6-Snapshot',
-                        'Engine_name': 'Unreal',
-                        'Project': 'SpeedRunCi'
+                    snapshotConfigs: [
+                        [
+                            snapshotId: 'snap-02fc82895afb49aa7',
+                            deviceName: '/dev/sdf',
+                            volumeType: 'gp3',
+                            iops: 5000,
+                            order: 1
+                        ],
+                        [
+                            snapshotId: 'snap-0c9a6bfbc8fa18b83',
+                            deviceName: '/dev/sdg',
+                            volumeType: 'gp3',
+                            iops: 3000,
+                            order: 2
+                        ]
                     ],
                     platform: 'Win64',
                     configuration: 'Development',
