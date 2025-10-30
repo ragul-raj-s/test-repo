@@ -47,7 +47,7 @@ pipeline {
                     
                         // SCM Configuration
                         scmType: 'git',
-                        gitUrl: 'git@github.com:ayeletstudioindia/ue5-test.git',
+                        gitUrl: 'https://github.com/ayeletstudioindia/ue5-test.git',
                         gitBranch: 'main',
                         gitCredentials: 'github-ue5-ssh',
                         gitSubmodules: true,
