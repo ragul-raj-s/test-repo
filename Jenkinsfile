@@ -55,7 +55,7 @@ pipeline {
                         gitShallowClone: true,
                         gitCloneDepth: 1,
                         cleanWorkspace: true,
-                        gitPAT:  credentials('github-pat'),
+                        gitPATCredentialId: 'github-pat',
                     
                         // Unreal Engine Configuration
                         platform: 'Win64',
