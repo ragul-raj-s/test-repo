@@ -62,7 +62,7 @@ pipeline {
                         configuration: 'Development',
                     
                         enginePath: 'D:/Engine/UnrealEngine_5_6/Windows/Engine/Build/BatchFiles/RunUAT.bat',
-                        projectPath: 'E:/TestRepo/ue5-test/MyProject2/MyProject2.uproject',
+                        projectPath: 'E:/workspace/${env.JOB_NAME}/MyProject2/MyProject2.uproject',
                         runTests: false,
                     
                         // S3 Configuration
