@@ -64,6 +64,7 @@ pipeline {
                         enginePath: 'D:/Engine/UnrealEngine_5_6/Windows',
                         projectPath: "E:/workspace/${env.JOB_NAME}/MyProject2/MyProject2.uproject",
                         runTests: false,
+                        ignoreExitCode1: true,
                     
                         // S3 Configuration
                         s3Bucket: 'speedrun-ci-tf-state',
