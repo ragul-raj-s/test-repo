@@ -21,7 +21,7 @@ pipeline {
                         subnetId: 'subnet-e0b930ad',
                         securityGroupIds: ['sg-a55cbf85'],
                         keyName: 'learning-key',
-                        iamInstanceProfile: 'arn:aws:iam::511345548959:instance-profile/Speedrun-test-ec2-role',
+                        iamInstanceProfile: 'arn:aws:iam::511345548959:role/ayelet-ec2-instance-profile-role',
                         snapshotConfigs: [
                             [
                                 snapshotId: 'snap-02fc82895afb49aa7',
