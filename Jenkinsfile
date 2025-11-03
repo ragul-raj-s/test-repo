@@ -68,6 +68,7 @@ pipeline {
                     
                         // S3 Configuration
                         s3Bucket: 'speedrun-ci-tf-state',
+                        s3ArtifactBucket: 'speedrun-artifacts',
                     
                         // Backend API Configuration
                         backendApiUrl: 'http://localhost:3000',
