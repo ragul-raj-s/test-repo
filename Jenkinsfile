@@ -15,7 +15,7 @@ pipeline {
                 script {
                     buildUnrealGameWithAWS([
                         // EC2 Configuration
-                        instanceType: 't3.large',
+                        instanceType: 'c6i.4xlarge',
                         amiId: 'ami-0cfb5dc6083f5748e',
                         awsRegion: 'us-east-1',
                         subnetId: 'subnet-e0b930ad',
@@ -65,6 +65,8 @@ pipeline {
                         projectPath: "E:/workspace/${env.JOB_NAME}/MyProject2/MyProject2.uproject",
                         runTests: false,
                         ignoreExitCode1: true,
+                        skipJenkinsArchive: false,
+                        failOnArchiveError: false,
                     
                         // S3 Configuration
                         s3Bucket: 'speedrun-ci-tf-state',
