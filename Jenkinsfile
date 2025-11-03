@@ -67,6 +67,8 @@ pipeline {
                         ignoreExitCode1: true,
                         skipJenkinsArchive: true,
                         failOnArchiveError: false,
+                        compressBeforeArchive: true,
+                        cleanupZipAfterArchive: true
                     
                         // S3 Configuration
                         s3Bucket: 'speedrun-ci-tf-state',
