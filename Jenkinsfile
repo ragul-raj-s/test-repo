@@ -15,8 +15,8 @@ pipeline {
                 script {
                     buildUnrealGameWithAWS([
                         useExistingNode: true,
-                        existingNodeName: 'unreal-build-124-1762175358402',
-                        existingInstanceId: 'i-0abc123def456789',
+                        existingNodeName: 'unreal-build-131-1762242290891',
+                        existingInstanceId: 'i-0d9b15a8c6ec9492e',
                         skipCheckout: true,
                         skipBuild: true,
                         archivePath: 'E:/workspace/test_job_02/Build',
