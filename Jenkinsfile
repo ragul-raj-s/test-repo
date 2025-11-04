@@ -21,6 +21,7 @@ pipeline {
                         skipBuild: true,
                         archivePath: 'E:/workspace/test_job_02/Build',
                         s3Bucket: 'speedrun-artifacts',
+                        s3BuildLogBucket: 'speedrun-log-artifacts',
                         s3ArtifactBucket: 'speedrun-artifacts',
                         awsRegion: 'us-east-1',
                         failOnS3Error: true
