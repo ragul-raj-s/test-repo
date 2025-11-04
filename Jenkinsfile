@@ -24,7 +24,8 @@ pipeline {
                         s3BuildLogBucket: 'speedrun-log-artifacts',
                         s3ArtifactBucket: 'speedrun-artifacts',
                         awsRegion: 'us-east-1',
-                        failOnS3Error: true
+                        failOnS3Error: true,
+                        backendApiUrl: 'https://flavia-unforlorn-unrubrically.ngrok-free.dev',
                     ])
                 }
             }
