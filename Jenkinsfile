@@ -65,7 +65,7 @@ pipeline {
                         projectPath: "E:/workspace/${env.JOB_NAME}/MyProject2/MyProject2.uproject",
                         runTests: false,
                         ignoreExitCode1: true,
-                        skipJenkinsArchive: true,
+                        skipJenkinsArchive: false,
                         failOnArchiveError: false,
                         compressBeforeArchive: true,
                         cleanupZipAfterArchive: true,
