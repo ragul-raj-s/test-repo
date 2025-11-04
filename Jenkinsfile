@@ -65,10 +65,6 @@ pipeline {
                         projectPath: "E:/workspace/${env.JOB_NAME}/MyProject2/MyProject2.uproject",
                         runTests: false,
                         ignoreExitCode1: true,
-                        skipJenkinsArchive: false,
-                        failOnArchiveError: false,
-                        compressBeforeArchive: true,
-                        cleanupZipAfterArchive: true,
                     
                         // S3 Configuration
                         s3Bucket: 'speedrun-ci-tf-state',
