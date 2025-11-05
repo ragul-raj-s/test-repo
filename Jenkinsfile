@@ -14,30 +14,61 @@ pipeline {
             steps {
                 script {
                     buildUnrealGameWithAWS([
-                        useExistingNode: true,
-                        existingNodeName: 'unreal-build-131-1762242290891',
-                        existingInstanceId: 'i-0d9b15a8c6ec9492e',
-                        skipCheckout: false,
-                        skipBuild: true,
-                        archivePath: 'E:/workspace/test_job_02/Build',
-                        s3Bucket: 'speedrun-artifacts',
-                        s3BuildLogBucket: 'speedrun-log-artifacts',
-                        s3ArtifactBucket: 'speedrun-artifacts',
-                        awsRegion: 'us-east-1',
-                        failOnS3Error: true,
-                        backendApiUrl: 'https://unexposable-marquerite-carpologically.ngrok-free.dev',
-
-                        scmType: 'git',
-                        gitUrl: 'https://github.com/ayeletstudioindia/ue5-test.git',
-                        gitBranch: 'main',
-                        gitCredentials: 'github-ue5-ssh',
-                        gitSubmodules: true,
-                        gitLFS: true,
-                        gitShallowClone: true,
-                        gitCloneDepth: 1,
-                        cleanWorkspace: true,
-                        gitPATCredentialId: 'github-pat',
-                    ])
+                    // EC2 Configuration
+                    instanceType: 'c6i.4xlarge',
+                    amiId: 'ami-0cfb5dc6083f5748e',
+                    awsRegion: 'us-east-1',
+                    subnetId: 'subnet-e0b930ad',
+                    securityGroupIds: ['sg-a55cbf85'],
+                    keyName: 'learning-key',
+                    iamInstanceProfile: 'arn:aws:iam::511345548959:instance-profile/ayelet-ec2-instance-profile-role',
+                    snapshotConfigs: [
+                        [
+                            snapshotId: 'snap-02fc82895afb49aa7',
+                            deviceName: '/dev/sdf',
+                            volumeType: 'gp3',
+                            iops: 5000,
+                            order: 1
+                        ],
+                        [
+                            snapshotId: 'snap-0c9a6bfbc8fa18b83',
+                            deviceName: '/dev/sdg',
+                            volumeType: 'gp3',
+                            iops: 3000,
+                            order: 2
+                        ]
+                    ],
+                
+                    // Jenkins Swarm Configuration (runs on C: drive - always available)
+                    jenkinsUrl: 'https://flavia-unforlorn-unrubrically.ngrok-free.dev',
+                
+                    // SCM Configuration
+                    scmType: 'git',
+                    gitUrl: 'https://github.com/ayeletstudioindia/ue5-test.git',
+                    gitPATCredentialId: 'github-pat',
+                    gitBranch: 'main',
+                    gitSubmodules: true,
+                    gitLFS: true,
+                    gitShallowClone: true,
+                    gitCloneDepth: 1,
+                    cleanWorkspace: true,
+                
+                    // Unreal Engine Configuration
+                    platform: 'Win64',
+                    configuration: 'Development',
+                
+                    enginePath: 'D:/Engine/UnrealEngine_5_6/Windows',
+                    projectPath: "E:/workspace/${env.JOB_NAME}/MyProject2/MyProject2.uproject",
+                    runTests: false,
+                    ignoreExitCode1: true,
+                
+                    // S3 Configuration
+                    s3Bucket: 'speedrun-ci-tf-state',
+                    s3ArtifactBucket: 'speedrun-artifacts',
+                
+                    // Backend API Configuration
+                    backendApiUrl: 'https://unexposable-marquerite-carpologically.ngrok-free.dev',
+                ])
                 }
             }
         }
