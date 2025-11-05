@@ -17,7 +17,7 @@ pipeline {
                         useExistingNode: true,
                         existingNodeName: 'unreal-build-131-1762242290891',
                         existingInstanceId: 'i-0d9b15a8c6ec9492e',
-                        skipCheckout: true,
+                        skipCheckout: false,
                         skipBuild: true,
                         archivePath: 'E:/workspace/test_job_02/Build',
                         s3Bucket: 'speedrun-artifacts',
