@@ -26,6 +26,17 @@ pipeline {
                         awsRegion: 'us-east-1',
                         failOnS3Error: true,
                         backendApiUrl: 'https://unexposable-marquerite-carpologically.ngrok-free.dev',
+
+                        scmType: 'git',
+                        gitUrl: 'https://github.com/ayeletstudioindia/ue5-test.git',
+                        gitBranch: 'main',
+                        gitCredentials: 'github-ue5-ssh',
+                        gitSubmodules: true,
+                        gitLFS: true,
+                        gitShallowClone: true,
+                        gitCloneDepth: 1,
+                        cleanWorkspace: true,
+                        gitPATCredentialId: 'github-pat',
                     ])
                 }
             }
