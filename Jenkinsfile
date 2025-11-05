@@ -65,6 +65,7 @@ pipeline {
                     // S3 Configuration
                     s3Bucket: 'speedrun-ci-tf-state',
                     s3ArtifactBucket: 'speedrun-artifacts',
+                    s3BuildLogBucket: 'speedrun-log-artifacts',
                 
                     // Backend API Configuration
                     backendApiUrl: 'https://unexposable-marquerite-carpologically.ngrok-free.dev',
