@@ -15,6 +15,10 @@ pipeline {
                 script {
                     buildUnrealGameWithAWS([
                     // EC2 Configuration
+                    useExistingNode: true,
+                    existingInstanceId: 'i-0f66384461d9f74ad',
+                    existingNodeName: 'unreal-build-160-1762429691062',
+                        
                     instanceType: 'c6i.4xlarge',
                     amiId: 'ami-0cfb5dc6083f5748e',
                     awsRegion: 'us-east-1',
