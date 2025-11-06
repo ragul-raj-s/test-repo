@@ -43,15 +43,21 @@ pipeline {
                     jenkinsUrl: 'https://flavia-unforlorn-unrubrically.ngrok-free.dev',
                 
                     // SCM Configuration
-                    scmType: 'git',
-                    gitUrl: 'https://github.com/ayeletstudioindia/ue5-test.git',
-                    gitPATCredentialId: 'github-pat',
-                    gitBranch: 'main',
-                    gitSubmodules: true,
-                    gitLFS: true,
-                    gitShallowClone: true,
-                    gitCloneDepth: 1,
-                    cleanWorkspace: true,
+                    // scmType: 'git',
+                    // gitUrl: 'https://github.com/ayeletstudioindia/ue5-test.git',
+                    // gitPATCredentialId: 'github-pat',
+                    // gitBranch: 'main',
+                    // gitSubmodules: true,
+                    // gitLFS: true,
+                    // gitShallowClone: true,
+                    // gitCloneDepth: 1,
+                    // cleanWorkspace: true,
+
+                    scmType: 'plasticscm',
+                    plasticServer: 'ayeletstudio.plasticscm.cloud:8087',
+                    plasticRepository: 'UETCIIPOC',
+                    plasticBranch: 'Programming',
+                    plasticCredentials: 'plastic-scm-credentials',
                 
                     // Unreal Engine Configuration
                     platform: 'Win64',
