@@ -60,7 +60,7 @@ pipeline {
                     scmType: 'plasticscm',
                     plasticServer: 'ayeletstudio@cloud',
                     plasticRepository: 'UETCIIPOC',
-                    plasticBranch: 'Programming',
+                    plasticBranch: '/main/Development',
                     plasticCredentials: 'plastic-scm-credentials',
                 
                     // Unreal Engine Configuration
