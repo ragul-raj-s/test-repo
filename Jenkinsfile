@@ -58,7 +58,7 @@ pipeline {
                     // cleanWorkspace: true,
 
                     scmType: 'plasticscm',
-                    plasticServer: 'ayeletstudio.plasticscm.cloud:8087',
+                    plasticServer: 'ayeletstudio@cloud',
                     plasticRepository: 'UETCIIPOC',
                     plasticBranch: 'Programming',
                     plasticCredentials: 'plastic-scm-credentials',
