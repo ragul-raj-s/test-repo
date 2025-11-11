@@ -19,6 +19,7 @@ pipeline {
                     existingInstanceId: 'i-0f66384461d9f74ad',
                     existingNodeName: 'unreal-build-160-1762429691062',
                     skipCheckout: true,
+                    skipBuild: true,
                         
                     instanceType: 'c6i.4xlarge',
                     amiId: 'ami-0cfb5dc6083f5748e',
