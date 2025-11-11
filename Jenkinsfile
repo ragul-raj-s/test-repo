@@ -21,7 +21,7 @@ pipeline {
                     // skipCheckout: true,
                     // skipBuild: true,
                         
-                    instanceType: 'c6i.4xlarge',
+                    instanceType: 'c6i.8xlarge',
                     amiId: 'ami-0a9975464df03b84e',
                     awsRegion: 'us-east-1',
                     subnetId: 'subnet-e0b930ad',
@@ -41,6 +41,7 @@ pipeline {
                             deviceName: '/dev/sdg',
                             volumeType: 'gp3',
                             iops: 3000,
+                            volumeSize: 500,
                             order: 2
                         ]
                     ],
