@@ -47,7 +47,7 @@ pipeline {
                     ],
                 
                     // Jenkins Swarm Configuration (runs on C: drive - always available)
-                    jenkinsUrl: 'https://flavia-unforlorn-unrubrically.ngrok-free.dev',
+                    jenkinsUrl: 'https://unexposable-marquerite-carpologically.ngrok-free.dev',
                 
                     // SCM Configuration
                     // scmType: 'git',
