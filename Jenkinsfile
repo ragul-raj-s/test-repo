@@ -15,14 +15,14 @@ pipeline {
                 script {
                     buildUnrealGameWithAWS([
                     // EC2 Configuration
-                    useExistingNode: true,
-                    existingInstanceId: 'i-0f66384461d9f74ad',
-                    existingNodeName: 'unreal-build-160-1762429691062',
-                    skipCheckout: true,
-                    skipBuild: true,
+                    // useExistingNode: true,
+                    // existingInstanceId: 'i-0f66384461d9f74ad',
+                    // existingNodeName: 'unreal-build-160-1762429691062',
+                    // skipCheckout: true,
+                    // skipBuild: true,
                         
                     instanceType: 'c6i.4xlarge',
-                    amiId: 'ami-0cfb5dc6083f5748e',
+                    amiId: 'ami-0a9975464df03b84e',
                     awsRegion: 'us-east-1',
                     subnetId: 'subnet-e0b930ad',
                     securityGroupIds: ['sg-a55cbf85'],
