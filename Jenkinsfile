@@ -21,13 +21,13 @@ pipeline {
                     // skipCheckout: true,
                     // skipBuild: true,
                         
-                    instanceType: 'c6i.8xlarge',
-                    amiId: 'ami-0a9975464df03b84e',
-                    awsRegion: 'us-east-1',
-                    subnetId: 'subnet-e0b930ad',
-                    securityGroupIds: ['sg-a55cbf85'],
-                    keyName: 'learning-key',
-                    iamInstanceProfile: 'arn:aws:iam::511345548959:instance-profile/ayelet-ec2-instance-profile-role',
+                    // instanceType: 'c6i.8xlarge',
+                    // amiId: 'ami-0a9975464df03b84e',
+                    // awsRegion: 'us-east-1',
+                    // subnetId: 'subnet-e0b930ad',
+                    // securityGroupIds: ['sg-a55cbf85'],
+                    // keyName: 'learning-key',
+                    // iamInstanceProfile: 'arn:aws:iam::511345548959:instance-profile/ayelet-ec2-instance-profile-role',
                     snapshotConfigs: [
                         [
                             snapshotId: 'snap-02fc82895afb49aa7',
@@ -47,7 +47,7 @@ pipeline {
                     ],
                 
                     // Jenkins Swarm Configuration (runs on C: drive - always available)
-                    jenkinsUrl: 'https://unexposable-marquerite-carpologically.ngrok-free.dev',
+                    // jenkinsUrl: 'https://unexposable-marquerite-carpologically.ngrok-free.dev',
                 
                     // SCM Configuration
                     // scmType: 'git',
@@ -70,18 +70,18 @@ pipeline {
                     platform: 'Win64',
                     configuration: 'Development',
                 
-                    enginePath: 'D:/Engine/UnrealEngine_5_6/Windows',
+                    // enginePath: 'D:/Engine/UnrealEngine_5_6/Windows',
                     projectPath: "E:/workspace/${env.JOB_NAME}/POC/POC.uproject",
-                    runTests: false,
-                    ignoreExitCode1: true,
+                    // runTests: false,
+                    // ignoreExitCode1: true,
                 
                     // S3 Configuration
                     s3Bucket: 'speedrun-ci-tf-state',
-                    s3ArtifactBucket: 'speedrun-artifacts',
-                    s3BuildLogBucket: 'speedrun-log-artifacts',
+                    // s3ArtifactBucket: 'speedrun-artifacts',
+                    // s3BuildLogBucket: 'speedrun-log-artifacts',
                 
                     // Backend API Configuration
-                    backendApiUrl: 'https://unexposable-marquerite-carpologically.ngrok-free.dev',
+                    // backendApiUrl: 'https://unexposable-marquerite-carpologically.ngrok-free.dev',
                 ])
                 }
             }
