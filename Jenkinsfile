@@ -50,21 +50,21 @@ pipeline {
                     // jenkinsUrl: 'https://unexposable-marquerite-carpologically.ngrok-free.dev',
                 
                     // SCM Configuration
-                    // scmType: 'git',
-                    // gitUrl: 'https://github.com/ayeletstudioindia/ue5-test.git',
-                    // gitPATCredentialId: 'github-pat',
-                    // gitBranch: 'main',
-                    // gitSubmodules: true,
-                    // gitLFS: true,
-                    // gitShallowClone: true,
-                    // gitCloneDepth: 1,
-                    // cleanWorkspace: true,
+                    scmType: 'git',
+                    gitUrl: 'https://github.com/ayeletstudioindia/ue5-test.git',
+                    gitPATCredentialId: 'github-pat',
+                    gitBranch: 'main',
+                    gitSubmodules: true,
+                    gitLFS: true,
+                    gitShallowClone: true,
+                    gitCloneDepth: 1,
+                    cleanWorkspace: true,
 
-                    scmType: 'plasticscm',
-                    plasticServer: 'ayeletstudio@cloud',
-                    plasticRepository: 'UETCIIPOC',
-                    plasticBranch: '/main/Development',
-                    plasticCredentials: 'plastic-scm-credentials',
+                    // scmType: 'plasticscm',
+                    // plasticServer: 'ayeletstudio@cloud',
+                    // plasticRepository: 'UETCIIPOC',
+                    // plasticBranch: '/main/Development',
+                    // plasticCredentials: 'plastic-scm-credentials',
                 
                     // Unreal Engine Configuration
                     platform: 'Win64',
@@ -76,7 +76,7 @@ pipeline {
                     // ignoreExitCode1: true,
                 
                     // S3 Configuration
-                    s3Bucket: 'speedrun-ci-tf-state',
+                    // s3Bucket: 'speedrun-ci-tf-state',
                     // s3ArtifactBucket: 'speedrun-artifacts',
                     // s3BuildLogBucket: 'speedrun-log-artifacts',
                 
