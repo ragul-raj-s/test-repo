@@ -88,14 +88,14 @@ pipeline {
                         platform: "Win64",
                         configuration: "Shipping",
                         isBuildEnabled: true,
-                        isCookEnabled: false,
+                        isCookEnabled: true,
                         isStageEnabled: true,
-                        isPackagingEnabled: false,
+                        isPackagingEnabled: true,
                         isPrereqsEnabled: true,
                         additionalConfigs: [
-                            compressionEnabled: false,
-                            useIncrementalCook: true,
-                            unversionedCookedContent: false
+                            isCompressionEnabled: false,
+                            isIncrementalCookEnabled: true,
+                            isUnversionedContentEnabled: false
                         ]
                     ]
                 ])
