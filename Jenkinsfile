@@ -83,7 +83,7 @@ pipeline {
                     // Backend API Configuration
                     // backendApiUrl: 'https://unexposable-marquerite-carpologically.ngrok-free.dev',
 
-                    buildConfig: {
+                    buildConfig: [
                         projectPath: "E:/workspace/${env.JOB_NAME}/MyProject2/MyProject2.uproject",
                         platform: "Win64",
                         configuration: "Shipping",
@@ -92,12 +92,12 @@ pipeline {
                         isStageEnabled: true,
                         isPackagingEnabled: false,
                         isPrereqsEnabled: true,
-                        additionalConfigs: {
-                          compressionEnabled: false,
-                          useIncrementalCook: true,
-                          unversionedCookedContent: false
-                        }
-                  }
+                        additionalConfigs: [
+                            compressionEnabled: false,
+                            useIncrementalCook: true,
+                            unversionedCookedContent: false
+                        ]
+                    ]
                 ])
                 }
             }
