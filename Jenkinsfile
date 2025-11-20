@@ -67,11 +67,11 @@ pipeline {
                     // plasticCredentials: 'plastic-scm-credentials',
                 
                     // Unreal Engine Configuration
-                    platform: 'Win64',
-                    configuration: 'Development',
+                    // platform: 'Win64',
+                    // configuration: 'Development',
                 
                     // enginePath: 'D:/Engine/UnrealEngine_5_6/Windows',
-                    projectPath: "E:/workspace/${env.JOB_NAME}/MyProject2/MyProject2.uproject",
+                    // projectPath: "E:/workspace/${env.JOB_NAME}/MyProject2/MyProject2.uproject",
                     // runTests: false,
                     // ignoreExitCode1: true,
                 
@@ -82,6 +82,22 @@ pipeline {
                 
                     // Backend API Configuration
                     // backendApiUrl: 'https://unexposable-marquerite-carpologically.ngrok-free.dev',
+
+                    "buildConfig": {
+                        "projectPath": "E:/workspace/${env.JOB_NAME}/MyProject2/MyProject2.uproject",
+                        "platform": "Win64",
+                        "configuration": "Shipping",
+                        "isBuildEnabled": true,
+                        "isCookEnabled": false,
+                        "isStageEnabled": true,
+                        "isPackagingEnabled": false,
+                        "isPrereqsEnabled": true,
+                        "additionalConfigs": {
+                          "compressionEnabled": false,
+                          "useIncrementalCook": true,
+                          "unversionedCookedContent": false
+                        }
+                  }
                 ])
                 }
             }
