@@ -71,7 +71,7 @@ pipeline {
                     configuration: 'Development',
                 
                     // enginePath: 'D:/Engine/UnrealEngine_5_6/Windows',
-                    projectPath: "E:/workspace/${env.JOB_NAME}/ue5-test/MyProject2/MyProject2.uproject",
+                    projectPath: "E:/workspace/${env.JOB_NAME}/MyProject2/MyProject2.uproject",
                     // runTests: false,
                     // ignoreExitCode1: true,
                 
