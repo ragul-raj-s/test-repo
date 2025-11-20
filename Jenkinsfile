@@ -18,7 +18,7 @@ pipeline {
                     useExistingNode: true,
                     existingInstanceId: 'i-0d7918e69484b8d16',
                     existingNodeName: 'unreal-build-221-1763615018855',
-                    skipCheckout: true,
+                    // skipCheckout: true,
                     // skipBuild: true,
                         
                     // instanceType: 'c6i.8xlarge',
